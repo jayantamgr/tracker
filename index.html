@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Material Tracker</h1>
+
+        <div class="form-card">
+            <input type="text" id="materialName" placeholder="Material Name">
+            <input type="number" id="quantity" placeholder="Quantity">
+            <input type="number" step="0.01" id="cost" placeholder="Cost">
+            <button onclick="addMaterial()">Add Material</button>
+        </div>
+
+        <div class="filter-card">
+            <input type="text" id="search" placeholder="Search material..." onkeyup="renderTable()">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Material</th>
+                    <th>Qty</th>
+                    <th>Cost</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="materialTable"></tbody>
+        </table>
+
+        <div class="summary">
+            <h3>Total Inventory Value: <span id="totalValue">0.00</span></h3>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
