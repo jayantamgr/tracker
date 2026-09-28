@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 30px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-card,
+.filter-card,
+.date-filter-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    width: 220px;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.date-filter-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.date-filter-card form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-card strong {
+    display: block;
+    margin: 5px;
+}
+
+.filter-card input {
+    width: 150px;
+}
+
+.delete-button {
+    background: #dc2626;
+    padding: 6px 10px;
+}
+
+.delete-button:hover {
+    background: #b91c1c;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #0066ff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0050cc;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #0066ff;
+    color: white;
+}
+
+.summary {
+    margin-top: 20px;
+    text-align: right;
+}
