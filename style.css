@@ -16,7 +16,8 @@ h1 {
 }
 
 .form-card,
-.filter-card {
+.filter-card,
+.date-filter-card {
     background: white;
     padding: 15px;
     border-radius: 10px;
@@ -28,6 +29,52 @@ input {
     padding: 10px;
     margin: 5px;
     width: 220px;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.date-filter-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.date-filter-card form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-card strong {
+    display: block;
+    margin: 5px;
+}
+
+.filter-card input {
+    width: 150px;
+}
+
+.delete-button {
+    background: #dc2626;
+    padding: 6px 10px;
+}
+
+.delete-button:hover {
+    background: #b91c1c;
 }
 
 button {

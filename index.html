@@ -10,25 +10,48 @@
     <div class="container">
         <h1>Material Tracker</h1>
 
-        <div class="form-card">
-            <input type="text" id="materialName" placeholder="Material Name">
-            <input type="number" id="quantity" placeholder="Quantity">
-            <input type="number" step="0.01" id="cost" placeholder="Cost">
-            <button onclick="addMaterial()">Add Material</button>
+        <div id="errorMessage" class="error-message" role="alert" hidden></div>
+
+        <form id="materialForm" class="form-card">
+            <input type="text" id="materialName" placeholder="Material Name" required>
+            <input type="number" id="quantity" placeholder="Quantity" min="0" step="any" required>
+            <input type="number" id="price" placeholder="Price" min="0" step="0.01" required>
+            <input type="text" id="vendor" placeholder="Vendor" required>
+            <label for="transactionDate">Transaction date</label>
+            <input type="date" id="transactionDate" required>
+            <button type="submit">Add Material</button>
+        </form>
+
+        <div class="date-filter-card">
+            <form id="dateQueryForm">
+                <label>From <input type="date" id="fromDate"></label>
+                <label>To <input type="date" id="toDate"></label>
+                <button type="submit">Filter dates</button>
+                <button type="button" id="clearDateFilters">Latest 100</button>
+            </form>
+            <label>Month <input type="month" id="monthFilter"></label>
+            <label>Year <input type="number" id="yearFilter" min="2000" max="2100" placeholder="YYYY"></label>
         </div>
 
         <div class="filter-card">
-            <input type="text" id="search" placeholder="Search material..." onkeyup="renderTable()">
+            <strong>Column filters</strong>
+            <input class="column-filter" type="text" id="dateFilter" placeholder="Transaction date">
+            <input class="column-filter" type="text" id="materialFilter" placeholder="Material">
+            <input class="column-filter" type="text" id="quantityFilter" placeholder="Quantity">
+            <input class="column-filter" type="text" id="priceFilter" placeholder="Price">
+            <input class="column-filter" type="text" id="vendorFilter" placeholder="Vendor">
+            <input class="column-filter" type="text" id="entryDateFilter" placeholder="Entry date">
         </div>
 
         <table>
             <thead>
                 <tr>
-                    <th>Date</th>
+                    <th>Purchase_Date</th>
                     <th>Material</th>
                     <th>Qty</th>
-                    <th>Cost</th>
-                    <th>Total</th>
+                    <th>Price</th>
+                    <th>Vendor</th>
+                    <th>Entry_Date</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -36,10 +59,12 @@
         </table>
 
         <div class="summary">
+            <span id="resultCount">0 of 0 rows</span>
             <h3>Total Inventory Value: <span id="totalValue">0.00</span></h3>
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js?v=20260928-1707"></script>
 </body>
 </html>
